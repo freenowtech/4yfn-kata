@@ -5,6 +5,28 @@ Coding kata for the 2018 4yfn event .The following is a TDD Kata, an exercise in
 * Try not to read ahead.
 * Do one task at a time. The trick is to learn to work incrementally.
 * Make sure you only test for correct inputs. There is no need to test for invalid inputs for this kata.
+* There are several folders , each one belonging to a specific language or technology in which you can solve the exercise. 
+* **Follow the red-green-refactor approach**
+
+
+## Instructions
+
+
+* Please create a separate git branch from master with your solution
+	* ``` git checkout master```  
+	* ``` git pull origin master```
+	* ``` git checkout -b <your_branch_name>``` ( to create a branch from master). As branch name we suggest you to use your name and surname  separated by underscores( e.g. markus_wallace)
+	
+* Commit each one of the requested tasks separately :
+	
+	* ``` git add -u ```
+	* ``` git commit -m "<message regarding the task you are solving>"```
+
+* Push your changes :	
+	*  ``` git push origin <your_branch_name>```
+	*  The user and passwords if required will be given at the momment of solving the exercise 	
+
+	
 
 ## The kata
 
