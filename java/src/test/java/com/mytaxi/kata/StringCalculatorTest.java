@@ -17,15 +17,15 @@ public class StringCalculatorTest
         String b = "1,2";
         //when
 
-        String resultVoid = "0";
-        String resultA = "1";
-        String resultB = "3";
+        int resultVoid = 0;
+        int resultA = 1;
+        int resultB = 3;
 
         //then
 
-        assertEquals(stringCalculator.add(voidString, resultVoid));
-        assertEquals(stringCalculator.add(a, resultA));
-        assertEquals(stringCalculator.add(b, resultB));
+        assertEquals(stringCalculator.add(voidString), resultVoid);
+        assertEquals(stringCalculator.add(a), resultA);
+        assertEquals(stringCalculator.add(b), resultB);
     }
 
 }
