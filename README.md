@@ -22,7 +22,7 @@ Coding kata for the 2018 4yfn event .The following is a TDD Kata, an exercise in
 	
 * Commit each one of the requested tasks separately :
 	
-	* ``` git add -u ```
+	* ``` git add -u . ```
 	* ``` git commit -m "<message regarding the task you are solving>"```
 
 * Push your changes :	
