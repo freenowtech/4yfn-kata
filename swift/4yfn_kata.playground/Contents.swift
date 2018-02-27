@@ -9,8 +9,11 @@ func test() {
     if (add(numbers: "") == 0) { print("OK") } else { print("KO"); err += 1 }
     if (add(numbers: "34") == 34) { print("OK") } else { print("KO"); err += 1 }
     if (add(numbers: "1,2") == 3) { print("OK") } else { print("KO"); err += 1 }
+    if (add(numbers: "1,2,3,4") == 10) { print("OK") } else { print("KO"); err += 1 }
+    if (add(numbers: "1,2") == 3) { print("OK") } else { print("KO"); err += 1 }
     
     print("Total errors: ", err)
+    if (add(numbers: "1,-2") == 3) { print("OK") } else { print("KO"); err += 1 }
 }
 
 func add(numbers: String) -> Int {
@@ -22,6 +25,7 @@ func add(numbers: String) -> Int {
         .flatMap { Int($0) }
         .forEach {
             if ($0 < 0) { fatalError("Negatives not allowed: \($0)"); }
+            if ($0 > 1000) { return; }
             output += $0
         }
 
@@ -29,6 +33,3 @@ func add(numbers: String) -> Int {
 }
 
 test();
-add(numbers: "1,2,-3\n4")
-
-
