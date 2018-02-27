@@ -30,4 +30,4 @@ func add(numbers: String) -> Int {
 }
 
 test();
-add(numbers: "1,33")
+add(numbers: "1,2,3,\n4,5")
