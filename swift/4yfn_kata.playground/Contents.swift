@@ -15,19 +15,18 @@ func test() {
 
 func add(numbers: String) -> Int {
     var output = 0
-    var i = 0;
-    
-    let array = numbers
-        .split(separator: ",")
-        .flatMap { Int($0) }
 
-    while (i < array.count) {
-        output += array[i]
-        i += 1
-    }
-    
+    let separators = CharacterSet(charactersIn: ",\n")
+    let array = numbers
+        .components(separatedBy: separators)
+        .flatMap { Int($0) }
+        .forEach {
+            output += $0
+        }
+
     return output;
 }
 
 test();
-add(numbers: "1,2,3,\n4,5")
+add(numbers: "1,2,3\n4")
+
