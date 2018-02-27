@@ -21,6 +21,7 @@ func add(numbers: String) -> Int {
         .components(separatedBy: separators)
         .flatMap { Int($0) }
         .forEach {
+            if ($0 < 0) { fatalError("Negatives not allowed: \($0)"); }
             output += $0
         }
 
@@ -28,5 +29,6 @@ func add(numbers: String) -> Int {
 }
 
 test();
-add(numbers: "1,2,3\n4")
+add(numbers: "1,2,-3\n4")
+
 
