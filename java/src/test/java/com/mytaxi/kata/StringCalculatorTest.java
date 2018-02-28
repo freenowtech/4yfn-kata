@@ -45,4 +45,13 @@ public class StringCalculatorTest
 
         Assert.assertEquals(accum, stringCalculator.calculate(builder.toString()));
     }
+
+    @Test
+    public void shouldAddNumbersWithNewlines()
+    {
+        Assert.assertEquals(0, stringCalculator.calculate(""));
+        Assert.assertEquals(1, stringCalculator.calculate("1"));
+        Assert.assertEquals(3, stringCalculator.calculate("1,2"));
+        Assert.assertEquals(15, stringCalculator.calculate("1,2,\n3,4\n,\n5"));
+    }
 }
