@@ -11,7 +11,6 @@ public class StringCalculatorTest {
 
         StringCalculator sc = new StringCalculator();
         int i = sc.calculate("1,2");
-        System.out.println(i);
         Assert.assertEquals(3, i);
 
     }
@@ -22,7 +21,6 @@ public class StringCalculatorTest {
 
         StringCalculator sc = new StringCalculator();
         int i = sc.calculate("");
-        System.out.println(i);
         Assert.assertEquals(0, i);
 
     }
@@ -34,7 +32,6 @@ public class StringCalculatorTest {
 
         StringCalculator sc = new StringCalculator();
         int i = sc.calculate("3");
-        System.out.println(i);
         Assert.assertEquals(3, i);
 
     }
@@ -46,9 +43,43 @@ public class StringCalculatorTest {
 
         StringCalculator sc = new StringCalculator();
         int i = sc.calculate("1,2,3,4,5,6,7,8,9,10");
-        System.out.println(i);
         Assert.assertEquals(55, i);
 
     }
+
+
+    @Test
+    public void shouldParseCharacters() {
+
+
+        StringCalculator sc = new StringCalculator();
+        int i = sc.calculate("1\n4,4,7");
+        Assert.assertEquals(16, i);
+
+    }
+
+
+    @Test
+    public void shouldParseNegativeNumbers() {
+
+
+        StringCalculator sc = new StringCalculator();
+        int i = sc.calculate("1,4,4,-7,-1");
+        Assert.assertEquals(1, i);
+
+    }
+
+    @Test
+    public void shouldParseGreaterNumbers() {
+
+
+        StringCalculator sc = new StringCalculator();
+        int i = sc.calculate("1,4,4,-7,-1,1003");
+        Assert.assertEquals(1, i);
+
+    }
+
+
+
 
 }

@@ -7,13 +7,15 @@ public class StringCalculator {
 
     public int calculate(String valueAsString) {
 
+        valueAsString = valueAsString.replace("\n" , ",");
         ArrayList<String> array = new ArrayList<>(Arrays.asList(valueAsString.split(",")));
         int index = 0;
 
         for (String num : array) {
 
             if (!num.isEmpty())
-                index+= Integer.valueOf(num);
+                if(Integer.valueOf(num)<1000)
+                    index+= Integer.valueOf(num);
 
         }
 
